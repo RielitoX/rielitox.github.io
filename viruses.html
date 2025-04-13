@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RielitoX Games</title>
+  <link rel="icon" type="image/x-icon" href="icono.png">
+  <style>
+    :root {
+      --color-bg: #f5f7fa;
+      --color-texto: #333;
+      --color-borde: #ddd;
+      --color-acento: #4a90e2;
+      --color-card: white;
+      --color-hover: #e6efff;
+      --color-boton: #333;
+      --color-boton-hover: #4a90e2;
+    }
+
+    body.dark {
+      --color-bg: #1e1e1e;
+      --color-texto: #f0f0f0;
+      --color-borde: #333;
+      --color-card: #2b2b2b;
+      --color-hover: #333c55;
+      --color-boton: #f0f0f0;
+      --color-boton-hover: #4a90e2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-texto);
+      transition: 0.3s;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      padding: 20px 40px;
+      background-color: var(--color-card);
+      border-bottom: 1px solid var(--color-borde);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .top-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .dmca, .toggle-dark {
+      text-decoration: none;
+      color: var(--color-boton);
+      padding: 10px 20px;
+      border: 2px solid var(--color-borde);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      background: none;
+    }
+
+    .dmca:hover, .toggle-dark:hover {
+      background-color: var(--color-boton-hover);
+      color: white;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 0 20px;
+      text-align: stretch;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+    ul {
+      margin-left: 30px;
+      margin-bottom: 16px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Mi Logo">
+    </div>
+    <div class="top-buttons">
+      <a href="index.html" class="dmca">Volver al Inicio</a>
+      <button class="toggle-dark" onclick="toggleModo()">🌓</button>
+    </div>
+  </header>
+
+  <main>
+    <h1>¿Por qué los cracks se detectan como virus?</h1>
+    <p><strong>Hola!</strong> Si alguna vez descargaste un juego crackeado de internet, es muy probable que te hayas encontrado con una advertencia del antivirus. En muchos casos, el archivo es bloqueado, eliminado o etiquetado como “virus”, “troyano” o “software malicioso”. Esto genera dudas, miedo y, a veces, la falsa creencia de que todos los juegos piratas contienen virus.</p>
+    <p>Pero la realidad es mucho más compleja. Para entender por qué ocurre esto, es necesario hablar sobre cómo funcionan los <strong>DRM</strong>, los <strong>cracks</strong> y los <strong>falsos positivos</strong> que detectan los antivirus.</p>
+    <h2>¿Qué es un DRM?</h2>
+    <p>DRM significa <strong>Digital Rights Management</strong> (Gestión de Derechos Digitales). Es una tecnología que se utiliza para <strong>proteger el contenido digital contra la copia o distribución no autorizada</strong>.</p>
+    <p>En los videojuegos, el DRM actúa como un sistema de seguridad que verifica que el usuario tenga una copia legal del juego. Algunos DRMs conocidos son <strong>SecuROM</strong>, <strong>StarForce</strong>, <strong>Games for Windows Live</strong> y más recientemente, <strong>Denuvo</strong>.</p>
+    <p>El problema con estos sistemas es que con el tiempo se vuelven obsoletos, dejan de funcionar o generan incompatibilidades. Por ejemplo, muchos juegos que usaban SecuROM ya no funcionan correctamente en Windows 10 o Windows 11, ya que el sistema operativo eliminó el soporte para ese tipo de protección.</p>
+    <p>Esto impide que personas que compraron legalmente esos juegos puedan volver a jugarlos años después. Desde el punto de vista de la <strong>preservación digital</strong>, esto es un problema serio.</p>
+    <h2>¿Qué es un crack?</h2>
+    <p>Un <strong>crack</strong> es una modificación de los archivos originales de un juego que permite <strong>eliminar el DRM</strong> o cualquier tipo de verificación. En términos simples, es una forma de saltarse la protección y ejecutar el juego sin necesidad de activarlo o conectarse a servidores.</p>
+    <p>Los cracks pueden tener distintos objetivos:</p>
+    <ul>
+      <li>Permitir jugar sin disco o sin conexión.</li>
+      <li>Eliminar la verificación online.</li>
+      <li>Revivir juegos antiguos que ya no se pueden activar.</li>
+      <li>Preservar títulos que fueron abandonados por sus desarrolladores.</li>
+    </ul>
+    <p>Y aunque muchas personas los usan para jugar gratis, los cracks también cumplen un rol <strong>clave en la conservación de videojuegos</strong>, ya que permiten que juegos que quedaron inutilizables por culpa del DRM sigan siendo jugables.</p>
+    <h2>¿Por qué los antivirus los detectan como virus?</h2>
+    <p>Cuando un antivirus detecta un archivo crackeado como virus, no necesariamente significa que sea malicioso. La mayoría de las veces se trata de un <strong>falso positivo</strong>.</p>
+    <p>Esto ocurre porque los cracks modifican el comportamiento normal del programa, y eso es exactamente lo que hacen muchos virus. Por ejemplo, un crack puede:</p>
+    <ul>
+      <li>Reemplazar el archivo .exe del juego por uno modificado.</li>
+      <li>Desactivar comprobaciones de seguridad.</li>
+      <li>Inyectar código en la memoria del juego para desactivar la protección.</li>
+    </ul>
+    <p>Todo esto, desde el punto de vista de un antivirus, es muy sospechoso. Por eso, aunque el archivo no sea dañino, el antivirus puede detectarlo como un riesgo potencial.</p>
+    <h2>¿Qué es un falso positivo?</h2>
+    <p>Un <strong>falso positivo</strong> es cuando el antivirus detecta un archivo como peligroso, pero en realidad no lo es. Es simplemente una detección errónea.</p>
+    <p>Esto puede pasar con muchos programas legítimos que modifican archivos, acceden al sistema o hacen cosas que “se parecen” al comportamiento de un malware. Los cracks, por definición, hacen eso, así que no es raro que tengan 10, 20 o incluso 40 detecciones en VirusTotal.</p>
+    <h2>¿Cómo saber si un crack es confiable?</h2>
+    <p>No todos los cracks son iguales, ni todos los grupos que los crean trabajan con la misma calidad. Algunos grupos reconocidos por sus buenos trabajos son:</p>
+    <ul>
+      <li><strong>Goldberg</strong> – Muy usado actualmente, especialmente por su compatibilidad con Steam y menor detección.</li>
+      <li><strong>Xliveless</strong> – Muy útil para juegos con GFWL como GTA IV.</li>
+      <li><strong>Razor1911, Reloaded, SKIDROW</strong> – Muy conocidos, aunque sus cracks antiguos suelen tener muchas detecciones.</li>
+    </ul>
+    <p>También es útil verificar el <strong>hash</strong> del archivo (una especie de firma digital). Si el hash coincide con el que se comparte en comunidades confiables, sabés que el archivo no fue modificado.</p>
+    <h2>¿Entonces todos los cracks son seguros?</h2>
+    <p>No. Lamentablemente, también existen versiones falsas de cracks que sí contienen malware real. Por eso, es importante:</p>
+    <ul>
+      <li>Descargar solo desde sitios de confianza o foros especializados.</li>
+      <li>Evitar cracks que vienen dentro de instaladores sospechosos.</li>
+      <li>Usar máquinas virtuales o entornos de prueba si no estás seguro.</li>
+    </ul>
+    <p>Pero decir que “todos los juegos crackeados tienen virus” es un error. Muchos cracks son limpios, seguros y necesarios para que algunos juegos puedan seguir existiendo en el tiempo.</p>
+    <h2>Conclusión</h2>
+    <p>Los cracks son herramientas que nacieron para romper la protección antipiratería, pero con el tiempo se volvieron fundamentales para conservar juegos antiguos y hacerlos jugables en sistemas modernos.</p>
+    <p>Que un antivirus los detecte no significa que sean peligrosos. La mayoría de las veces son <strong>falsos positivos</strong> causados por el comportamiento similar al de un virus.</p>
+    <p>Lo más importante es investigar, analizar el archivo, revisar su origen y entender que no todo lo que se detecta como virus realmente lo es.</p>
+    <p>¡Gracias por leer! Espero que ahora entiendas mejor por qué pasa esto y cómo manejarlo sin caer en malentendidos.</p>
+  </main>
+
+  <script>
+    function mostrarCategoria(nombre) {
+      document.querySelectorAll('.categoria').forEach(cat => cat.classList.remove('activa'));
+      document.getElementById(nombre).classList.add('activa');
+    }
+
+    function toggleModo() {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('modoOscuro', document.body.classList.contains('dark'));
+    }
+
+    // Al cargar la página, aplicar el modo guardado
+    window.addEventListener('DOMContentLoaded', () => {
+      const guardado = localStorage.getItem('modoOscuro');
+      if (guardado === null || guardado === "true") {
+        document.body.classList.add('dark'); // por defecto oscuro
+      }
+    });
+  </script>
+</body>
+</html>

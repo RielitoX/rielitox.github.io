@@ -1,1 +1,312 @@
-<h1>test</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RielitoX Games</title>
+  <link rel="icon" type="image/x-icon" href="icono.png">
+  <style>
+    :root {
+      --color-bg: #f5f7fa;
+      --color-texto: #333;
+      --color-borde: #ddd;
+      --color-acento: #4a90e2;
+      --color-card: white;
+      --color-hover: #e6efff;
+      --color-boton: #333;
+      --color-boton-hover: #4a90e2;
+    }
+
+    body.dark {
+      --color-bg: #1e1e1e;
+      --color-texto: #f0f0f0;
+      --color-borde: #333;
+      --color-card: #2b2b2b;
+      --color-hover: #333c55;
+      --color-boton: #f0f0f0;
+      --color-boton-hover: #4a90e2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-texto);
+      transition: 0.3s;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: var(--color-card);
+      border-bottom: 1px solid var(--color-borde);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .top-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .dmca, .toggle-dark {
+      text-decoration: none;
+      color: var(--color-boton);
+      padding: 10px 20px;
+      border: 2px solid var(--color-borde);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      background: none;
+    }
+
+    .dmca:hover, .toggle-dark:hover {
+      background-color: var(--color-boton-hover);
+      color: white;
+    }
+    .aboutme, .toggle-dark {
+      text-decoration: none;
+      color: var(--color-boton);
+      padding: 10px 20px;
+      border: 2px solid var(--color-borde);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      background: none;
+    }
+
+    .aboutme:hover, .toggle-dark:hover {
+      background-color: var(--color-boton-hover);
+      color: white;
+    }
+
+    nav.categorias {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 20px 10px;
+      background-color: var(--color-card);
+      border-bottom: 1px solid var(--color-borde);
+    }
+
+    nav.categorias button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: var(--color-borde);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      color: var(--color-texto);
+    }
+
+    nav.categorias button:hover {
+      background-color: var(--color-hover);
+    }
+
+    .search-box {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      background-color: var(--color-card);
+      border-bottom: 1px solid var(--color-borde);
+    }
+
+    .search-box input {
+      width: 300px;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: 1px solid var(--color-borde);
+      border-radius: 8px;
+      background-color: var(--color-bg);
+      color: var(--color-texto);
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      padding: 30px 20px;
+    }
+
+    .categoria {
+      display: none;
+      max-width: 1400px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .categoria.activa {
+      display: flex;
+    }
+
+    .elemento {
+  width: 240px;
+  height: auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: var(--color-card);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.elemento img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px 16px 0 0;
+}
+
+.nombre {
+  padding: 12px;
+  font-size: 18px;
+  text-align: center;
+  color: var(--color-texto);
+  background-color: var(--color-card);
+  width: 100%;
+  border-top: 1px solid var(--color-borde);
+  border-radius: 0 0 16px 16px;
+}
+
+    .elemento:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    @media (max-width: 650px) {
+      .elemento {
+        width: 90%;
+        height: auto;
+      }
+
+      .elemento img {
+        height: auto;
+        aspect-ratio: 3/4;
+      }
+    }
+    .categoria.programas .elemento img {
+  height: 320px;
+  width: 100%;
+  object-fit: cover;
+}
+.categoria.programas .elemento {
+  width: 320px;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Mi Logo">
+    </div>
+    <div class="top-buttons">
+      <a href="viruses.html" class="aboutme">Virus en los Juegos</a>
+      <a href="dmca.html" class="dmca">DMCA</a>
+      <button class="toggle-dark" onclick="toggleModo()">🌓</button>
+    </div>
+  </header>
+
+  <nav class="categorias">
+    <button onclick="mostrarCategoria('juegos')">JUEGOS</button>
+    <button onclick="mostrarCategoria('programas')">PROGRAMAS</button>
+
+  </nav>
+
+  <div class="search-box">
+    <input type="text" id="buscador" placeholder="Buscar...">
+  </div>
+
+  <main>
+    <section id="juegos" class="categoria activa">
+      </a>
+      <a href="https://tinyurl.com/bdebxxvk" class="elemento">
+        <img src="https://i.imgur.com/3KVkDIC.jpeg" alt="GTA: San Andreas" />
+        <p class="nombre">GTA: San Andreas</p>
+      </a>
+    </section>
+
+    <section id="programas" class="categoria programas">
+      <a href="https://www.7-zip.org/a/7z2409-x64.exe" class="elemento">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/7ziplogo.svg/1200px-7ziplogo.svg.png" alt="7-Zip" />
+        <p class="nombre">7-Zip</p>
+      </a>
+    </section>
+  </main>
+  <div id="sin-resultados" style="display: none; text-align: center; margin-top: 20px; font-size: 18px;">
+    No se encontraron resultados.
+  </div>
+  <script>
+    function mostrarCategoria(nombre) {
+      document.querySelectorAll('.categoria').forEach(cat => cat.classList.remove('activa'));
+      document.getElementById(nombre).classList.add('activa');
+    }
+  
+    function toggleModo() {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('modoOscuro', document.body.classList.contains('dark'));
+    }
+  
+    function ordenarElementos() {
+      const secciones = document.querySelectorAll('.categoria');
+  
+      secciones.forEach(seccion => {
+        const elementos = Array.from(seccion.querySelectorAll('.elemento'));
+        elementos.sort((a, b) => {
+          const nombreA = a.querySelector('.nombre')?.textContent.trim().toLowerCase() || '';
+          const nombreB = b.querySelector('.nombre')?.textContent.trim().toLowerCase() || '';
+          return nombreA.localeCompare(nombreB);
+        });
+        elementos.forEach(el => seccion.appendChild(el));
+      });
+    }
+  
+    // Buscador
+    document.getElementById('buscador').addEventListener('input', function () {
+  const texto = this.value.toLowerCase();
+  const categoriaActiva = document.querySelector('.categoria.activa');
+
+  const elementos = categoriaActiva.querySelectorAll('.elemento');
+  let hayCoincidencias = false;
+
+  elementos.forEach(el => {
+    const alt = el.querySelector('img').alt.toLowerCase();
+    const visible = alt.includes(texto);
+    el.style.display = visible ? 'block' : 'none';
+    if (visible) hayCoincidencias = true;
+  });
+
+  // Si no hay texto, mostrar todo
+  if (texto.length === 0) {
+    elementos.forEach(el => el.style.display = 'block');
+  }
+});
+  
+    // Al cargar la página
+    window.addEventListener('DOMContentLoaded', () => {
+      const guardado = localStorage.getItem('modoOscuro');
+      if (guardado === null || guardado === "true") {
+        document.body.classList.add('dark');
+      }
+      ordenarElementos();
+      document.getElementById('sin-resultados').style.display = hayCoincidencias ? 'none' : 'block';
+    });
+  </script>
+</body>
+</html>

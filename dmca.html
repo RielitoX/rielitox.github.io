@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DMCA - RielitoX Games</title>
+  <link rel="icon" type="image/x-icon" href="icono.png">
+  <style>
+    :root {
+      --color-bg: #f5f7fa;
+      --color-texto: #333;
+      --color-borde: #ddd;
+      --color-acento: #4a90e2;
+      --color-card: white;
+      --color-hover: #e6efff;
+      --color-boton: #333;
+      --color-boton-hover: #4a90e2;
+    }
+
+    body.dark {
+      --color-bg: #1e1e1e;
+      --color-texto: #f0f0f0;
+      --color-borde: #333;
+      --color-card: #2b2b2b;
+      --color-hover: #333c55;
+      --color-boton: #f0f0f0;
+      --color-boton-hover: #4a90e2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-texto);
+      transition: 0.3s;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: var(--color-card);
+      border-bottom: 1px solid var(--color-borde);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .top-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .dmca, .toggle-dark {
+      text-decoration: none;
+      color: var(--color-boton);
+      padding: 10px 20px;
+      border: 2px solid var(--color-borde);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      background: none;
+    }
+
+    .dmca:hover, .toggle-dark:hover {
+      background-color: var(--color-boton-hover);
+      color: white;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 0 20px;
+      text-align: center;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Mi Logo">
+    </div>
+    <div class="top-buttons">
+      <a href="index.html" class="dmca">Volver al Inicio</a>
+      <button class="toggle-dark" onclick="toggleModo()">🌓</button>
+    </div>
+  </header>
+
+  <main>
+<h1>Declaración de No Alojo Contenido</h1>
+<p>Se informa de manera clara y categórica que el presente sitio web, en su configuración técnica y operativa, no actúa como plataforma de almacenamiento, hospedaje, ni distribución directa de archivos o contenidos protegidos por derechos de autor, ni de ninguna otra índole que esté sometida a regulaciones similares. Este sitio web, bajo ninguna circunstancia, posee, gestiona ni mantiene en sus propios servidores ningún archivo digital, ya sea de naturaleza multimedia, software, textos, imágenes, audios, videos, o cualquier otro tipo de material susceptible de ser clasificado bajo la protección legal de propiedad intelectual.</p>
+<p>Las funciones del sitio se limitan exclusivamente a ofrecer enlaces de redireccionamiento hacia recursos alojados en servidores ajenos a este dominio, proporcionados por terceros. Estos enlaces apuntan hacia plataformas externas sobre las cuales este sitio no ejerce control, supervisión, ni verificación alguna de su contenido, formato, disponibilidad, ni de su conformidad con las normativas legales relativas a los derechos de autor u otras leyes aplicables.</p>
+<p>Por lo tanto, no se almacena ni distribuye ningún archivo directamente en este sitio web, y la responsabilidad sobre el contenido alojado en los sitios a los que redirige este portal recae exclusivamente en los proveedores, administradores o responsables de dichos recursos externos. El sitio no tiene acceso al contenido al que se redirige ni interactúa con él de manera alguna más allá de facilitar la ubicación de dicho material a través de enlaces web.</p>
+<p>En caso de que un titular de derechos de autor considere que algún contenido vinculado a través de este sitio infringe sus derechos, podrá solicitar la remoción del enlace o contenido correspondiente. Para proceder con dicha solicitud, se deberá contactar a través del correo electrónico:</p>
+<p><strong>📧 rielitoxgames@gmail.com</strong></p>
+  </main>
+
+  <script>
+    function mostrarCategoria(nombre) {
+      document.querySelectorAll('.categoria').forEach(cat => cat.classList.remove('activa'));
+      document.getElementById(nombre).classList.add('activa');
+    }
+
+    function toggleModo() {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('modoOscuro', document.body.classList.contains('dark'));
+    }
+
+    // Al cargar la página, aplicar el modo guardado
+    window.addEventListener('DOMContentLoaded', () => {
+      const guardado = localStorage.getItem('modoOscuro');
+      if (guardado === null || guardado === "true") {
+        document.body.classList.add('dark'); // por defecto oscuro
+      }
+    });
+  </script>
+</body>
+</html>
